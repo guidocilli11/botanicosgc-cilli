@@ -205,7 +205,7 @@ input[type=submit]:hover {
 }
 
 /* animación card */
-
+/* contenido de cartas */
 .contCards {
     display: flex;
     align-items: center;
