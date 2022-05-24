@@ -43,7 +43,7 @@ a {
 }
 
 #cabeceraSitio {
-  background-color: darkkhaki !important;
+  background-color: #413e3e !important;
 }
 
 #cabeceraSitio a {
@@ -69,76 +69,6 @@ a {
       flex-wrap: wrap;
 }
 
-.navegadorHome {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.nav-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 100%;
-}
-
-.logo-content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.navbar-new {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.navbar-new a {
-  margin: 20px;
-}
-
-.tituloProducto {
-  text-align: center;
-  color: black;
-  font-weight: bold;
-}
-
-.dosColumnas {
-  width: 50%;
-}
-
-.dosColumnas__titulo {
-  font-size: 25px;
-  color: #202020;
-}
-
-.dosColumnas__contenido {
-  font-size: 16px;
-  text-align: left;
-}
-
-.dosColumnas__lista {
-  color: #313131;
-}
-
 .recetario {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,15 +92,15 @@ a {
      object-fit: contain;
 }
 
-.iframeStyleMap {
+.contenedorIframe {
+  width: 50%;
+}
+
+.contenedorIframe .iframeStyleMap {
   width: 100%;
   height: 400px;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.contenedorIframe {
-  width: 50%;
 }
 
 .dosColumnasContenido {
@@ -185,7 +115,30 @@ a {
           align-items: center;
 }
 
+.dosColumnasContenido .dosColumnas {
+  width: 50%;
+}
+
+.dosColumnasContenido .dosColumnas__titulo {
+  font-size: 25px;
+  color: #202020;
+}
+
+.dosColumnasContenido .dosColumnas__contenido {
+  font-size: 16px;
+  text-align: left;
+}
+
+.dosColumnasContenido .dosColumnas__lista {
+  color: #313131;
+}
+
 /* Contactos formulario */
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
 input[type=text],
 select {
   width: 100%;
@@ -212,7 +165,7 @@ select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #363535;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -222,7 +175,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #363535;
 }
 
 /* Contenedores estructurales */
@@ -238,12 +191,33 @@ input[type=submit]:hover {
           justify-content: center;
 }
 
-.cont-galeria > div {
+.cont-galeria .navegadorHome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.cont-galeria .navegadorHome .tituloProducto {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.cont-galeria div {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.cont-galeria > div > img {
+.cont-galeria div img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -269,7 +243,7 @@ input[type=submit]:hover {
   margin-top: 80px;
 }
 
-.mainContainerCard {
+.contCards .mainContainerCard {
   height: 320px;
   width: 250px;
   position: relative;
@@ -277,7 +251,7 @@ input[type=submit]:hover {
           perspective: 500px;
 }
 
-.card {
+.contCards .mainContainerCard .card {
   width: 100%;
   height: 100%;
   -webkit-box-shadow: .5px 1px 10px black;
@@ -289,12 +263,31 @@ input[type=submit]:hover {
   transition: all 1.5s ease;
 }
 
-.card:hover {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+.contCards .mainContainerCard .card #card1 {
+  background: url(imagenes/productos-home.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.cardFront {
+.contCards .mainContainerCard .card #card2 {
+  background: url(imagenes/recetas-home.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.contCards .mainContainerCard .card #card3 {
+  background: url(imagenes/nosotros-home.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.contCards .mainContainerCard .card #card4 {
+  background: url(imagenes/contacto-home.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.contCards .mainContainerCard .card .cardFront {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -315,7 +308,20 @@ input[type=submit]:hover {
           justify-content: center;
 }
 
-.cardBack {
+.contCards .mainContainerCard .card .cardFront .titularCard {
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #3c3a3a;
+  -webkit-box-shadow: .5px 1px 10px black;
+          box-shadow: .5px 1px 10px black;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.contCards .mainContainerCard .card .cardBack {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -339,33 +345,23 @@ input[type=submit]:hover {
           flex-direction: column;
 }
 
-.titularCard {
-  background-color: #fff;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  color: #3c3a3a;
-  -webkit-box-shadow: .5px 1px 10px black;
-          box-shadow: .5px 1px 10px black;
+.contCards .mainContainerCard .card .cardBack h2 {
+  font-size: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.contCards .mainContainerCard .card .cardBack p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
-  font-size: 25px;
-  text-transform: uppercase;
 }
 
-.cardBack h2 {
-  font-size: 25px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.cardBack p {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.cardBack a {
+.contCards .mainContainerCard .card .cardBack a {
   background-color: #fff;
   border: 1px solid #393939;
   -webkit-box-shadow: 0px 0px 10px 0.2px #a5a5a5;
@@ -375,59 +371,17 @@ input[type=submit]:hover {
   margin-bottom: 20px;
 }
 
-.cardBack a:hover {
+.contCards .mainContainerCard .card .cardBack a:hover {
   background-color: #3c3a3a;
   color: #fff;
 }
 
-#card1 {
-  background: url(imagenes/productos-home.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-#card2 {
-  background: url(imagenes/recetas-home.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-#card3 {
-  background: url(imagenes/nosotros-home.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-#card4 {
-  background: url(imagenes/contacto-home.jpg);
-  background-size: cover;
-  background-position: center;
+.card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 /* Footer */
-.footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: beige;
-}
-
-.footerAireSuperior {
-  padding-top: 30px;
-}
-
-.socialMedia {
-  width: 30px;
-}
-
 .qrLogo {
   width: 130px;
 }

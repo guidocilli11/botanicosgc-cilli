@@ -5,14 +5,13 @@
     box-sizing: border-box;
 }
 
-$colorFondo: darkkhaki;
+$colorFondo: rgb(65, 62, 62);
 $gap: 50px;
 $row-height: 300px;
 $colorNegro: rgb(54, 53, 53);
 $colorRojo: red;
 
-$colores:(
-    "colorNegro": $colorNegro,
+$colores:("colorNegro": $colorNegro,
     "colorRojo": $colorRojo,
 );
 
@@ -44,11 +43,11 @@ a {
 /* Header y navbar */
 .barraNavegacion__lista {
     list-style: none;
-}
 
-.barraNavegacion__lista li {
-    display: inline-block;
-    margin: 20px;
+    li {
+        display: inline-block;
+        margin: 20px;
+    }
 }
 
 .logo {
@@ -56,11 +55,11 @@ a {
 }
 
 #cabeceraSitio {
-    background-color: $colorFondo!important;
-}
+    background-color: $colorFondo !important;
 
-#cabeceraSitio a {
-    color: #fff !important;
+    a {
+        color: #fff !important;
+    }
 }
 
 .banner {
@@ -75,61 +74,12 @@ a {
     flex-wrap: wrap;
 }
 
-.navegadorHome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-.nav-content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-
-}
-
-.logo-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar-new {
-    flex: 1;
-}
-
-.navbar-new a {
-    margin: 20px;
-}
-
-.tituloProducto {
-    text-align: center;
-    color: black;
-    font-weight: bold;
-}
-
-.dosColumnas {
-    width: 50%;
-    &__titulo{
-        font-size: 25px;
-        color: rgb(32, 32, 32);
-    }
-    &__contenido{
-        font-size: 16px;
-        text-align: left;
-    }
-    &__lista{
-        color: rgb(49, 49, 49);
-    }
-}
-
 .recetario {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+
     .iframeStyle {
         width: 80%;
         height: 450px;
@@ -137,23 +87,47 @@ a {
     }
 }
 
-.iframeStyleMap {
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
-}
-
 .contenedorIframe {
     width: 50%;
+
+    .iframeStyleMap {
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+    }
 }
 
 .dosColumnasContenido {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .dosColumnas {
+        width: 50%;
+
+        &__titulo {
+            font-size: 25px;
+            color: rgb(32, 32, 32);
+        }
+
+        &__contenido {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        &__lista {
+            color: rgb(49, 49, 49);
+        }
+    }
 }
 
 /* Contactos formulario */
+form {
+    width: 60%;
+    margin: 0 auto;
+
+}
+
 input[type=text],
 select {
     width: 100%;
@@ -178,7 +152,7 @@ select {
 
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: $colorNegro;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -188,7 +162,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: $colorNegro;
 }
 
 
@@ -200,16 +174,31 @@ input[type=submit]:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var($gap);
     justify-content: center;
+
+    .navegadorHome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        .tituloProducto {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+        }
+    }
 }
 
-.cont-galeria>div {
-    object-fit: cover;
-}
+.cont-galeria {
+    div {
+        object-fit: cover;
 
-.cont-galeria>div>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .format-color {
@@ -224,131 +213,116 @@ input[type=submit]:hover {
     justify-content: space-around;
     margin-bottom: 80px;
     margin-top: 80px;
-}
 
-.mainContainerCard {
-    height: 320px;
-    width: 250px;
-    position: relative;
-    perspective: 500px;
-}
+    .mainContainerCard {
+        height: 320px;
+        width: 250px;
+        position: relative;
+        perspective: 500px;
 
-.card {
-    width: 100%;
-    height: 100%;
-    box-shadow: .5px 1px 10px black;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transition: all 1.5s ease;
+        .card {
+            width: 100%;
+            height: 100%;
+            box-shadow: .5px 1px 10px black;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: all 1.5s ease;
+
+            #card1 {
+                background: url(imagenes/productos-home.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #card2 {
+                background: url(imagenes/recetas-home.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #card3 {
+                background: url(imagenes/nosotros-home.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #card4 {
+                background: url(imagenes/contacto-home.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            .cardFront {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                transform: translateZ(80px);
+                backface-visibility: hidden;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .titularCard {
+                    background-color: #fff;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    color: rgb(60, 58, 58);
+                    box-shadow: .5px 1px 10px black;
+                    text-align: center;
+                    font-size: 25px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .cardBack {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                backface-visibility: hidden;
+                transform: rotateY(180deg);
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                h2 {
+                    font-size: 25px;
+                    flex: 1;
+                }
+
+                p {
+                    flex: 1;
+                    width: 80%;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                a {
+                    background-color: #fff;
+                    border: 1px solid rgb(57, 57, 57);
+                    box-shadow: 0px 0px 10px .2px rgb(165, 165, 165);
+                    padding: 20px 60px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-color: rgb(60, 58, 58);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .card:hover {
     transform: rotateY(180deg);
 }
 
-.cardFront {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    transform: translateZ(80px);
-    backface-visibility: hidden;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.cardBack {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.titularCard {
-    background-color: #fff;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    color: rgb(60, 58, 58);
-    box-shadow: .5px 1px 10px black;
-    text-align: center;
-    font-size: 25px;
-    text-transform: uppercase;
-}
-
-.cardBack h2 {
-    font-size: 25px;
-    flex: 1;
-
-}
-
-.cardBack p {
-    flex: 1;
-}
-
-.cardBack a {
-    background-color: #fff;
-    border: 1px solid rgb(57, 57, 57);
-    box-shadow: 0px 0px 10px .2px rgb(165, 165, 165);
-    padding: 20px 60px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.cardBack a:hover {
-    background-color: rgb(60, 58, 58);
-    color: #fff;
-
-}
-
-#card1 {
-    background: url(imagenes/productos-home.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card2 {
-    background: url(imagenes/recetas-home.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card3 {
-    background: url(imagenes/nosotros-home.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card4 {
-    background: url(imagenes/contacto-home.jpg);
-    background-size: cover;
-    background-position: center;
-}
 
 /* Footer */
-.footer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: beige;
-}
-
-.footerAireSuperior {
-    padding-top: 30px;
-}
-
-.socialMedia {
-    width: 30px;
-}
-
 .qrLogo {
     width: 130px;
 }
